@@ -1,6 +1,4 @@
 # SimProc
-!SimProc Demo
-
 SimProc is a simple implementation of image processing filters.
 
 ## Introduction
