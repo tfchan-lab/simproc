@@ -1,19 +1,23 @@
-<<<<<<< HEAD
-# simproc
-![](https://github.com/tfchan-lab/simproc/demo.jpg)
-"A simple implmentation of image processing filters"
-=======
+# SimProc
+!SimProc Demo
+
+SimProc is a simple implementation of image processing filters.
+
 ## Introduction
-"This repository contains a simple command-line image processing tool to process uncompressed Portable Pixmap Format `.ppm` images."
-=======
+This repository contains a simple command-line image processing tool designed to process uncompressed Portable Pixmap Format (`.ppm`) images.
+
 ## Installation
-"To install it right away, download from [release](https://github.com/tfchan-lab/simproc/releases/tag/v1.0), a zip folder is included which contains images that can be used to test the program."
-"Alternatively, you can compile from source using the latest JDK."
-=======
+To get started with SimProc, you can choose one of the following methods:
+
+1. **Download the latest release**: You can download the latest release from our GitHub releases page. The release includes a zip folder containing images that you can use to test the program.
+2. **Compile from source**: If you prefer, you can also compile the program from source using the latest JDK.
+
 ## Usage
-"simgproc ? | Displays this message"
-"simgproc <filename> greyscale | Greyscales user-chosen image"
-"simgproc <filename> blur <size> <SD> | Blurs user-chosen image"
-"simgproc <filename> downsample <multiplier> | Down-samples user-chosen image"
-"simgproc <filename> sobel <threshold> | Detects the edge of user-chosen image with Sobel Operator"
-"simgproc <filename> canny <threshold_low> <threshold_high>| Detects the edge of user-chosen image with Canny Operator"
+Here are some of the commands you can use with SimProc:
+
+- `simgproc ?` - Displays this message.
+- `simgproc <filename> greyscale` - Converts the specified image to greyscale.
+- `simgproc <filename> blur <size> <SD>` - Blurs the specified image.
+- `simgproc <filename> downsample <multiplier>` - Down-samples the specified image.
+- `simgproc <filename> sobel <threshold>` - Detects the edges of the specified image using the Sobel Operator.
+- `simgproc <filename> canny <threshold_low> <threshold_high>` - Detects the edges of the specified image using the Canny Operator.
