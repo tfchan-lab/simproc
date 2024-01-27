@@ -1,5 +1,5 @@
 # SimProc
-![](https://github.com/tfchan-lab/simproc/demo.jpg)
+![](https://github.com/tfchan-lab/simproc/blob/master/demo.jpg)
 
 SimProc is a simple implementation of image processing filters.
 
