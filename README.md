@@ -9,7 +9,7 @@ This repository contains a simple command-line image processing tool designed to
 ## Installation
 To get started with SimProc, you can choose one of the following methods:
 
-1. **Download the latest release**: You can download the latest release from [release](https://github.com/tfchan-lab/simproc/releases/tag/v1.0). The release includes a zip folder containing images that you can use to test the program.
+1. **Download the latest release**: You can download the latest release from [release](https://github.com/tfchan-lab/simproc/releases/). The release includes a zip folder containing images that you can use to test the program.
 2. **Compile from source**: If you prefer, you can also compile the program from source using the latest JDK.
 
 ## Usage
