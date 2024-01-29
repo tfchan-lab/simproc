@@ -7,17 +7,10 @@ public class Sobel {
     Kernel x;
     Kernel y;
     double t;
-
-    Sobel(MaxPool m, Kernel x, Kernel y, double t) {
-        this.m = m;
-        this.x = x;
-        this.y = y;
-        this.t = t;
-    }
+    int[][][] pixels;
 
     double convolution(int y, int x, int n, Kernel k) {
         double temp = 0;
-
         for (int i = 0; i < k.kernelSize; i++) {
             for (int j = 0; j < k.kernelSize; j++) {
                 if ((y + i - (k.kernelSize - 1) / 2 < 0 || (x + j - (k.kernelSize - 1) / 2) < 0 || (y + i - (k.kernelSize - 1) / 2) >= m.sizeY || (x + j - (k.kernelSize - 1) / 2) >= m.sizeX)) {
@@ -32,11 +25,13 @@ public class Sobel {
         return temp;
     }
 
-    void applyEdge() throws IOException {
-        PrintWriter newImg = new PrintWriter("edge_detected.ppm");
-        newImg.println("P3");
-        newImg.println(m.sizeX + " " + m.sizeY);
-        newImg.println(m.colorMax);
+    Sobel(MaxPool m, Kernel x, Kernel y, double t) {
+        this.m = m;
+        this.x = x;
+        this.y = y;
+        this.t = t;
+        pixels = new int[m.sizeY][m.sizeX][3];
+
         for (int i = 0; i < m.sizeY; i++) {
             for (int j = 0; j < m.sizeX; j++) {
                 double pix[] = new double[3];
@@ -48,10 +43,28 @@ public class Sobel {
                 }
                 // Intensity Threshold for naive denoising
                 if (((pix[0] + pix[1] + pix[2]) / 3) < t) {
-                    newImg.print("0 0 0");
+                    for (int n = 0; n < 3; n++) {
+                        pixels[i][j][n] = 0;
+                    }
                 }
                 else {
-                    newImg.print((int)pix[0] + " " + (int)pix[1] + " " + (int)pix[2]);
+                    for (int n = 0; n < 3; n++) {
+                        pixels[i][j][n] = (int)pix[n];
+                    }
+                }
+            }
+        }
+    }
+
+    void applyEdge() throws IOException {
+        PrintWriter newImg = new PrintWriter("edge_detected.ppm");
+        newImg.println("P3");
+        newImg.println(m.sizeX + " " + m.sizeY);
+        newImg.println(m.colorMax);
+        for (int i = 0; i < m.sizeY; i++) {
+            for (int j = 0; j < m.sizeX; j++) {
+                for (int n = 0; n< 3; n++) {
+                    newImg.print((int)pixels[i][j][n] + " ");
                 }
                 newImg.println();
             }

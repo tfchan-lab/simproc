@@ -46,7 +46,7 @@ public class Kernel {
                 kernel[2][0] = -1; kernel[2][1] = -2; kernel[2][2] = -1;
             }
         }
-        else {
+        else { // Failsafe condition
             System.exit(1);
         }
     }

@@ -44,7 +44,6 @@ public class Canny {
     }
 
     void HT(int l, int h) { // Hysteresis Thresholding
-        // Double Thresholding
         for (int i = 1; i < sizeY -1; i++) {
             for (int j = 1; j < sizeX - 1; j++) {
                 if ((pixels[i][j][0] <= l)) {
@@ -67,7 +66,7 @@ public class Canny {
             }
         }
     }
-
+    
     void BR() { // Border Removal
         for (int i = 0; i < sizeY; i++) {
             for (int m = 0; m < 3; m++) {

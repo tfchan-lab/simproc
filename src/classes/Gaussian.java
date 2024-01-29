@@ -4,17 +4,12 @@ import java.io.PrintWriter;
 public class Gaussian {
     Image img;
     Kernel knl;
+    int[][][] pixels;
     
-    Gaussian(Image i, Kernel k) {
-        img = i;
-        knl = k;
-    }
-
-    void applyBlur() throws IOException {
-        PrintWriter newImg = new PrintWriter("blurred.ppm");
-        newImg.println("P3");
-        newImg.println(img.sizeX + " " + img.sizeY);
-        newImg.println(img.colorMax);
+    Gaussian(Image image, Kernel kernel) {
+        img = image;
+        knl = kernel;
+        pixels = new int[img.sizeY][img.sizeX][3];
         for (int i = 0; i < img.sizeY; i++) {
             for (int j = 0; j < img.sizeX; j++) {
                 for (int m = 0; m < 3; m++) {
@@ -28,8 +23,21 @@ public class Gaussian {
                             }
                         }
                     }
-                    temp = Math.min(Math.max((int)temp, 0), img.colorMax);
-                    newImg.print((int)temp + " ");
+                    pixels[i][j][m] = (int)Math.min(Math.max((int)temp, 0), img.colorMax);
+                }
+            }
+        }
+    }
+
+    void applyBlur() throws IOException {
+        PrintWriter newImg = new PrintWriter("blurred.ppm");
+        newImg.println("P3");
+        newImg.println(img.sizeX + " " + img.sizeY);
+        newImg.println(img.colorMax);
+        for (int i = 0; i < img.sizeY; i++) {
+            for (int j = 0; j < img.sizeX; j++) {
+                for (int m = 0; m < 3; m++) {
+                    newImg.print((int)pixels[i][j][m] + " ");
                 }
                 newImg.println();
             }

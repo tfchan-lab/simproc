@@ -6,9 +6,9 @@ public class Image {
     int[][][] pixels;
     Scanner sc = new Scanner(System.in);
     
+    Image() {}
     Image(String s) throws FileNotFoundException {
         String filename = s;
-
         Scanner img = new Scanner(new File(filename));
         // Plain PPM check
         String p3check = img.next();
@@ -21,10 +21,9 @@ public class Image {
         // Image information
         sizeX = img.nextInt();
         sizeY = img.nextInt();
-        //int totalpx = sizeX * sizeY;
-        System.out.println("Size of image(width * height): " + sizeX + " " + sizeY);
+        System.out.println("Size of image: " + sizeX + "*" + sizeY + " px");
         colorMax = img.nextInt();
-        System.out.println("Maximum color value: " + colorMax);
+        System.out.println("Maximum brightness value: " + colorMax);
         int temp = colorMax;
         int colorDepth = 0;
         while (temp > 0) {
