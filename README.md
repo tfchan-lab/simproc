@@ -4,7 +4,7 @@
 SimProc is a simple implementation of image processing filters.
 
 ## Introduction
-This repository contains a simple, lightweight command-line image processing tool designed to process uncompressed Portable Pixmap Format (`.ppm`) images. An experimental GUI tool is also in progress, basic functionality has been implemented but not yet production ready. See [Changelog](https://github.com/tfchan-lab/simproc/blob/master/changelog.md)
+This repository contains a simple, lightweight command-line image processing tool designed to process uncompressed Portable Pixmap Format (`.ppm`) images. An experimental GUI tool is also in progress, basic functionality has been implemented but not yet production ready. See [changelog](https://github.com/tfchan-lab/simproc/blob/master/changelog.md).
 
 ## Installation
 To get started with SimProc, you can choose one of the following methods:
