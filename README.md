@@ -15,12 +15,12 @@ To get started with SimProc, you can choose one of the following methods:
 ## Usage
 Here are some of the commands you can use with SimProc:
 
-- `simgproc-cli ?` - Displays this message.
-- `simgproc-cli greyscale <filename> ` - Converts the specified image to greyscale.
-- `simgproc-cli blur <filename> <size> <SD>` - Blurs the specified image.
-- `simgproc-cli sharpen <filename> <intensity>` - Sharpens the specified image.
-- `simgproc-cli downsample <filename> <multiplier>` - Down-samples the specified image.
-- `simgproc-cli sobel <filename> <threshold>` - Detects the edges of the specified image using the Sobel Operator.
+- `simproc-cli ?` - Displays this message.
+- `simproc-cli greyscale <filename> ` - Converts the specified image to greyscale.
+- `simproc-cli blur <filename> <size> <SD>` - Blurs the specified image.
+- `simproc-cli sharpen <filename> <intensity>` - Sharpens the specified image.
+- `simproc-cli downsample <filename> <multiplier>` - Down-samples the specified image.
+- `simproc-cli sobel <filename> <threshold>` - Detects the edges of the specified image using the Sobel Operator.
 - `simgproc-cli canny <filename> <threshold_low> <threshold_high>` - Detects the edges of the specified image using the Canny Operator.
   
 Alternatively, you can try the latest GUI tool:
